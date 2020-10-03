@@ -1,0 +1,33 @@
+spring:
+   profiles:
+      active: dev-6644
+      
+---
+server:
+   profiles: dev-6644
+   application: 
+      name: product-server
+      
+   datasource: 
+      driverClassName: com.mysql.jdbc.Driver      
+      url: jdbc:mysql://127.0.0.1:3306/snack?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+      type: com.alibaba.druid.pool.DruidDataSource
+      username: root
+      password: a
+   http:
+      encoding: 
+         charset: utf-8
+         force: true
+         enabled: true
+ 
+mybatis:
+    #mapper映射文件所在的路径
+   mapper-locations: mapper/*Mapper.xml
+   #需要启动别名所在的包    
+   type-aliases-package: com.cheng.snack.product.bean
+   
+eureka:
+   client:
+      service-url:
+         defaultZone: http://   
+                  
